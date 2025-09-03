@@ -24,7 +24,8 @@ JavaScript
 
 📸 Скриншот
 
-<img width="1438" height="827" alt="Снимок экрана 2025-09-02 в 17 31 54" src="https://github.com/user-attachments/assets/f7753eee-5bab-4a1a-9c7e-2629e4a38ec3" />
+<img width="1438" height="827" alt="Снимок экрана 2025-09-03 в 06 16 39" src="https://github.com/user-attachments/assets/39ca5484-e7d2-40de-a1a8-3737ac7fad54" />
+
 
 
 
