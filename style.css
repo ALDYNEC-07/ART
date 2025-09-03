@@ -14,7 +14,7 @@
 		flex-direction: column;
 		align-items: center;
 		margin: 0 auto;
-		padding-right: 40px;
+		padding-right: 320px;
 	}
 	#myFace > img {
 		width: 150px;
@@ -31,15 +31,21 @@
 	#leftProfile, #rightProfile {
 		width: 250px;
 		height: 150px;
+		padding: 20px;
 		font-family: "TASA Explorer", sans-serif;
 		font-size: 30px;
-		border-radius: 15px;
+		border-radius: 10px;
 		box-shadow: 0 0 6px 1px rgb(226, 0, 0);
 		background-color: rgba(0, 0, 0, 0.533);
 	}
 	#rightProfile {
 		font-size: 24px;
 		padding: 20px;
+	}
+	#leftAndRightProfile {
+		display: flex;
+		flex-direction: column;
+		gap: 130px;
 	}
 	#profile {
 		width: 600px;
@@ -85,7 +91,7 @@
 		display: flex;
 		justify-content: space-between;
 		margin:  auto;
-		padding-right: 40px;
+		padding-right: 320px;
 		}
 	#myButton {
 		padding: 5px 20px;
