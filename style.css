@@ -1,25 +1,25 @@
+	* {
+		box-sizing: border-box;
+	}	
+	@font-face {
+ 		 font-family: "BubbleSans";
+ 		 src: url("fonts/BubbleSans-Regular.woff") format("woff2"),
+   	  		  url("fonts/BubbleSans-Regular.woff2") format("woff"),
+	}
 	body {
-		font-family: "Moo Lah Lah", sans-serif;
+		height: 100vh;
+  		margin: 0;	
+		font-family: "TASA Explorer", sans-serif;
 		font-weight: 400;
 		font-size: 40px;
 		color: white;
 		padding-bottom: 100px;
-		background-image: url("https://i.pinimg.com/originals/1e/e4/7c/1ee47c52e470e22ba6585f90d5513f77.jpg");
+		background-image: url("https://pic.rutubelist.ru/video/2025-05-11/1c/c6/1cc6fe0fe8c3961102217b16ec5e3757.jpg");
+		background-color: rgba(0, 0, 0, 0.5);
+  		background-blend-mode: multiply; 
 		background-size: cover;
 		background-position: center;
 		background-attachment: fixed;
-	}
-	#myFace {
-		display: flex;
-		flex-direction: column;
-		align-items: center;
-		margin: 0 auto;
-		padding-right: 320px;
-	}
-	#myFace > img {
-		width: 150px;
-		height: 180px;
-		filter: drop-shadow(3px 2px 8px rgb(226, 0, 0));
 	}
 	#myProfile {
 		display: flex;
@@ -27,78 +27,72 @@
 		gap: 30px;
 		align-items: center;
 		margin-top: -15px;
-	}
-	#leftProfile, #rightProfile {
-		width: 250px;
-		height: 150px;
-		padding: 20px;
-		font-family: "TASA Explorer", sans-serif;
-		font-size: 30px;
-		border-radius: 10px;
-		box-shadow: 0 0 6px 1px rgb(226, 0, 0);
-		background-color: rgba(0, 0, 0, 0.533);
-	}
-	#rightProfile {
-		font-size: 24px;
-		padding: 20px;
-	}
-	#leftAndRightProfile {
-		display: flex;
-		flex-direction: column;
-		gap: 130px;
+		color: black;
 	}
 	#profile {
-		width: 600px;
-		height: 500px;
+		width: 400px;
 		margin: 30px 0;
+		margin-top: 100px;
 		padding: 10px;
+		padding-bottom: 0;
 		border-radius: 15px;
-		background-color: rgba(255, 255, 255, 0.95);
+		background-color: white;
 	}
 	#list-item {
 		margin: 0;
-		margin-bottom: 30px;
 		padding-left: 0;
 	} 
 	#list-item > li {
-		color: rgb(226, 117, 8);
 		font-size: 40px;
 		font-weight: 500;
 		padding: 10px;
 		border-radius: 10px;
 		list-style: none;
 	}
+	#leftProfile {
+		height: 35px;
+		display: flex;
+		align-items: center;
+		gap: 20px;
+		font-size: 20px;
+	}
+	#rightProfile {
+		font-size: 18px;
+ 		font-family: "BubbleSans";
+		padding: 10px;
+		margin: 10px 0;
+	}
+	#aboutUserJob {
+		width: 100px;
+		text-align: center;
+		padding: 5px 10px;
+	}
 	#art-user {
 		width: 600px;
 		margin: 0 auto;
-		margin-top: 10px;
 	}
 	#idUserDiv {
+		width: 65px;
 		display: flex;
-		justify-content: space-between;
-		padding: 10px;
+		padding: 5px 10px;
 	}
 	#idUser {
 		color: white;
 		border-radius: 10px;
 		padding: 0 10px;
 	}
-	#aboutUserJobText {
-		padding: 10px;
-	}
 	.button {
-		width: 600px;
 		display: flex;
-		justify-content: space-between;
+		justify-content: center;
+		gap: 70px;
 		margin:  auto;
-		padding-right: 320px;
 		}
-	#myButton {
+	#myButton, #temaButton {
 		padding: 5px 20px;
 		text-align: center;
 		border-radius: 5px;
 		border: 0;
-		background-color: rgba(13, 144, 103, 0.3);
+		background-color: whitesmoke;
 		cursor: pointer;
-		color: white;
+		color: black;
 	}

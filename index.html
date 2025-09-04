@@ -5,45 +5,33 @@
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 	<title>Art</title>
 	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"/>
-	<link href="https://fonts.googleapis.com/css2?family=Libertinus+Keyboard&family=Moo+Lah+Lah&family=TASA+Explorer:wght@400..800&display=swap" rel="stylesheet">
+	<link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&family=TASA+Explorer:wght@400..800&display=swap" rel="stylesheet">
 	<link rel="stylesheet" href="style.css">
 </head>
 <body>
-	<div id="myFace">
-	<img src="faceArt.png">
-	</div>
 	<div id="myProfile">
 		<div id="profile">
 			<ul id="list-item">
-				<li id="item">
-				</li>
-				<li id="item-name">
-				</li>
+				<li id="item-name"></li>
 			</ul>
+					<div id="leftProfile">
+							<div id="idUserDiv">
+								<span id="idUserText"></span>
+								<span id="idUser"></span>
+							</div>
+								<span id="aboutUserJob"></span>
+					</div>
+							<div id="rightProfile"></div>
+
 			<div id="art-user">
 				<img id="img" src="">
 			</div>
 		</div>
-		<div id="leftAndRightProfile">
-				<div id="leftProfile">
-			<div id="idUserDiv">
-				<b id="idUserText"></b>
-				<span id="idUser"></span>
-			</div>
-			<div id="abot-user">
-				<div id="aboutUserJobText">
-				<b id="aboutUserJob"></b>
-				</div>
-				<p id="aboutUserInst"></p>
-				<p id="aboutUserTime"></p>
-			</div>
-		</div>
-			<div id="rightProfile"></div>
-			</div>
 	</div>
 	<div class="button">
-		<button id="myButton" onclick="addNameUser()">add user name</button>
-		<button id="myButton" onclick="showEmailUser()">show user email</button>
+		<button id="myButton" onclick="showEmailUser()">EMAIL</button>
+		<button id="myButton" onclick="content()">CONTENT</button>
+		<button id="temaButton" onclick="tema()">tema</button>
 	</div>
 <script src="ajax.js"></script>
 </body>

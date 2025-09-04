@@ -26,62 +26,78 @@ let currentTextUser = 0;
 let postsData = [];
 let index = 0;
 
- const addNameUser = () => {
+ const content = () => {
   if (index < postsData.length) { // проверяем, есть ли ещё элементы
+
+        // Создание и получения имен
+    const listItems = document.getElementById("list-item");
+    const listItemElement = document.getElementById('item-name');
+    listItemElement.classList.add('animate__animated', 'animate__fadeIn');
+    listItemElement.textContent = postsData[index].name;
+    listItems.appendChild(listItemElement);
+    index++;
+
+        // ID Художника
+    const idUserDiv = document.getElementById('idUserDiv');
+    const idUserText = document.getElementById('idUserText');
+    const idUser = document.getElementById('idUser');
+    idUserDiv.style.backgroundColor = "gainsboro";
+    idUserDiv.style.borderRadius = "10px";
+    idUserText.textContent = "ID: ";
+    idUser.textContent = postsData[index].id; // добавляем каждый user его id
+    idUser.style.color = "black";
+
+    // Описание место работы художника
+    const aboutUserJob = document.getElementById('aboutUserJob');
+    currentJob = (currentJob + 1) % jobUser.length;
+    aboutUserJob.textContent = jobUser[currentJob];
+    aboutUserJob.style.backgroundColor = "gainsboro";
+    aboutUserJob.style.borderRadius = "10px";
 
     // Описание искусства художника
     const rightProfile = document.getElementById('rightProfile')
     currentTextUser = (currentTextUser + 1) % textUser.length
     rightProfile.textContent = textUser[currentTextUser]
 
-    // Искусство художника 
+    // ART-Картина 
     const art = document.getElementById('art-user')
     const img = document.getElementById("img");
     current = (current + 1) % artIndex.length; 
     img.src = artIndex[current];
-    img.width = 600
-    img.height = 380
+    img.width = 380
+    img.height = 290
     img.style.borderRadius = "10px"
     art.appendChild(img)
     img.classList.add('animate__animated',"animate__headShake")
 
-    // ID Художника
-    const idUser = document.getElementById('idUser');
-    const idUserText = document.getElementById('idUserText')
-    idUser.textContent = postsData[index].id; // добавляем каждый user его id
-    idUser.style.border = "0.5px solid black";
-    idUser.style.boxShadow = "0px 0px 15px 1px inset rgb(226, 0, 0)"
-    idUserText.textContent = "ID: "
-
-    // Описание место работы художника
-    const aboutUserJob = document.getElementById('aboutUserJob')
-    const aboutUserJobText = document.getElementById('aboutUserJobText')
-    currentJob = (currentJob + 1) % jobUser.length;
-    aboutUserJobText.textContent = "PLACE OF WORK: "
-    aboutUserJob.textContent = jobUser[currentJob];
-    aboutUserJobText.appendChild(aboutUserJob);
-
-    // Создание ли и получения имен
-    const listItems = document.getElementById("list-item");
-    const listItemElement = document.getElementById('item-name');
-    listItemElement.classList.add('animate__animated', 'animate__fadeIn');
-    listItemElement.textContent = postsData[index].name;
-    listItemElement.style.boxShadow = "0px 0px 6px 1px rgb(226, 0, 0)"
-    listItemElement.style.border = "1px solid white";
-    listItemElement.style.textAlign = "left"
-    listItems.appendChild(listItemElement);
-    index++;
 
      // нажми на кнопку чтобы показать почту юзера
     showEmailUser = () => {
     listItemElement.textContent = postsData[index + 1].email;
     };
+
     // при клике на почту он вернет имя имя обратно.
     listItems.addEventListener('click', () => { 
     listItems.lastChild.textContent = postsData[index - 1].name
     })
+
+    tema = () => {
+      let profile = document.getElementById('profile')
+      profile.style.backgroundColor = "darkcyan";
+      profile.style.color = "aliceblue";
+
+      let temaButton = document.getElementById('temaButton')
+      temaButton.addEventListener('dblclick', () => {
+      profile.style.backgroundColor = "white";
+      profile.style.color = "black";
+      })
+    }
   };
   };
+
+
+
+
   // удаляем последний элемент
 // const delLastElement = () => {
 //     let delList = document.getElementById('list-item');
