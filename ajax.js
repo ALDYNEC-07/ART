@@ -97,9 +97,15 @@ let index = 0;
       profile.style.backgroundColor = "white";
       })
     }
-  };
-  };
 
+    const wordSimfonia = document.getElementById('wordSimfonia');
+    let text = "Каждый цвет - это нота в моей личной симфонии.";
+    text = text.replace("цвет", `<span style="color: beige;">цвет</span>`);
+    text = text.replace("нота", `<span style="color: beige;">нота</span>`);
+    text = text.replace("симфонии", `<span style="color: beige;">симфонии</span>`);
+    wordSimfonia.innerHTML = text;  
+  };
+  };
 
 
 
@@ -111,4 +117,6 @@ let index = 0;
 //     delIdUser.lastChild.textContent = postsData[index - 2].id // удаляем каждый удаленный элемент из счетчика
 //     index--
 // };
+
+
 

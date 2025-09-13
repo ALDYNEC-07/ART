@@ -69,9 +69,9 @@
 		margin: -35px;
 		padding-left: 150px;
 		font-size: 18px;
- 		font-family: "BubbleSans";
 	} 
-	#wordsArt {
+	#wordsArt, #wordSimfonia {
+ 		font-family: "BubbleSans";
 		margin-top: 330px;
 		margin-bottom: 0;
 		padding-left: 50px;
@@ -79,6 +79,10 @@
 	#wordsArt > p {
 		font-size: 40px;
  		font-family: "BubbleSans";
+	}
+	#wordSimfonia {
+		margin-top: 150px;
+		text-align: center;
 	}
 	#myProfile {
 		display: flex;
