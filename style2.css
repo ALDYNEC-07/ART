@@ -53,48 +53,17 @@
 		align-items: center;
 		gap: 30px;
 	}
-	#title {
-		width: 1140px;
-		margin: 220px auto;
-		text-align: center;
-		font-family: "Tagesschrift", system-ui;
-		font-size: 130px;
-	}
-	#title > h1 {
-		font-weight: 100;
-		margin: 0;
-		color: rgb(245, 245, 219);
-	}
-	#title > h6 {
-		margin: -35px;
-		padding-left: 150px;
-		font-size: 18px;
- 		font-family: "BubbleSans";
-	} 
-	#wordsArt, #wordSimfonia {
- 		font-family: "BubbleSans";
-		margin-top: 330px;
-		margin-bottom: 0;
-		padding-left: 50px;
-	}
-	#wordsArt > p {
-		font-size: 40px;
- 		font-family: "BubbleSans";
-	}
-	#wordSimfonia {
-		margin-top: 150px;
-		text-align: center;
-	}
 	#myProfile {
 		display: flex;
 		justify-content: center;
 		gap: 30px;
 		align-items: center;
-		margin-top: -15px;
+		margin-top: -30px;
 		color: black;
 	}
 	#profile {
-		width: 620px;
+		width: 1200px;
+		display: flex;
 		margin: 30px 0;
 		margin-top: 100px;
 		padding: 10px;
@@ -132,7 +101,6 @@
 		padding: 5px 10px;
 	}
 	#art-user {
-		width: 600px;
 		margin: 0 auto;
 	}
 	#idUserDiv {
@@ -148,7 +116,6 @@
 	.button {
 		display: flex;
 		justify-content: center;
-		align-items: center;
 		gap: 70px;
 		margin:  auto;
 		}
