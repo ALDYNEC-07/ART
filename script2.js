@@ -1,76 +1,46 @@
-// Получение данных с сервера асинхронно
-const posts = fetch("https://jsonplaceholder.typicode.com/users")
-.then(response => response.json())
-.then(items => {postsData = items;})
-.catch(err => console.log(err))
+// Имена художников
+const artNames = [
+      "Rebecca Shoulders",
+      "Stephanie Bergey"
+]
+let currentName = 0;
+// Instagran User
+const artInsta = [
+  "https://www.instagram.com/rebeccapletsch/",
+  "https://www.instagram.com/palettemage/"
+]
+let currentInst = 0;
 
 // Искусство художника
-let artIndex = [
-  "art-1.jpg","art-6.jpg","art-3.jpg", "art-4.jpg", "art-5.jpg",
-  "art-2.jpg", "art-7.jpg","art-8.jpg","art-9.jpg","art-10.jpg"
-]
+let artPic = ["Rebecca-Shoulders.png","Stephanie-Bergey.png"]
 let current = 0;
-
-// Место работы художника
-let jobUser = ["APPLE", "MILAN", "GRECY", "LONDON", "MOSKOV", "ALDY", "New-York", "SPAIN", "NEW-ORLEANS", "GROZNY"]
-let currentJob = 0;
 
 // Описание картинок художником
 let textUser = [
-  "Я не копировал мир — я выкрикивал его свет и боль на холст.",
-  "Это как буря страстей, кружащаяся в бесконечной игре света и тьмы, где каждый штрих несет свои тайны и разрушения",
-  "Я не искал гармонии — я рвал её на части и собирал вновь, чтобы показать правду.",
-  "Мои звёзды — это не небо, а огонь души, что не умолкает.",
-  "Я творил так, словно кисть — это последний крик моей жизни.",
-  "Я рисую, чтобы понять сам себя.",
-  "Моё искусство — это мой дневник без слов.",
-  "Я рисую то, что чувствую, а не то, что вижу.",
-  "Я живу в красках, потому что слова недостаточны",
-  "Каждый цвет — это нота в моей личной симфонии."
+  "Ребекка — художница и коллажистка из Юты с портфолио, оформленным в удобном и понятном формате. Ее галерея лучших работ содержит изображения в высоком разрешении, позволяющие рассмотреть каждую деталь.",
+  "Стефани Берджи — иллюстратор из Балтимора, работающая в акриле, акварели, гуаши и рисунке. В своём блоге на Pixpa она делится творческими историями, советами и личными новостями, создавая вокруг искусства живое сообщество."
 ]
 let currentTextUser = 0;
 
-let postsData = [];
-let index = 0;
-
  const content = () => {
-  if (index < postsData.length) { // проверяем, есть ли ещё элементы
-
         // Создание и получения имен
     const listItems = document.getElementById("list-item");
     const listItemElement = document.getElementById('item-name');
     listItemElement.classList.add('animate__animated', 'animate__fadeIn');
-    listItemElement.textContent = postsData[index].name;
+    currentName = (currentName + 1) % artNames.length;
+    listItemElement.textContent = artNames[currentName];
     listItems.appendChild(listItemElement);
-    index++;
-
-        // ID Художника
-    const idUserDiv = document.getElementById('idUserDiv');
-    const idUserText = document.getElementById('idUserText');
-    const idUser = document.getElementById('idUser');
-    idUserDiv.style.backgroundColor = "gainsboro";
-    idUserDiv.style.borderRadius = "10px";
-    idUserText.textContent = "ID: ";
-    idUser.textContent = postsData[index - 1].id; // добавляем каждый user его id
-    idUser.style.color = "black";
-
-    // Описание место работы художника
-    const aboutUserJob = document.getElementById('aboutUserJob');
-    currentJob = (currentJob + 1) % jobUser.length;
-    aboutUserJob.textContent = jobUser[currentJob];
-    aboutUserJob.style.backgroundColor = "gainsboro";
-    aboutUserJob.style.borderRadius = "10px";
 
     // Описание искусства художника
-    const rightProfile = document.getElementById('rightProfile')
+    const aboutUser = document.getElementById('aboutUser')
     currentTextUser = (currentTextUser + 1) % textUser.length
-    rightProfile.textContent = textUser[currentTextUser]
+    aboutUser.textContent = textUser[currentTextUser]
 
     // ART-Картина 
     const art = document.getElementById('art-user')
     const img = document.getElementById("img");
-    current = (current + 1) % artIndex.length; 
-    img.src = artIndex[current];
+    current = (current + 1) % artPic.length; 
+    img.src = artPic[current];
     img.width = 700
     img.height = 400
     img.style.borderRadius = "10px"
@@ -79,14 +49,11 @@ let index = 0;
 
 
      // нажми на кнопку чтобы показать почту юзера
-    showEmailUser = () => {
-    listItemElement.textContent = postsData[index + 1].email;
+    showInsta = () => {
+      currentInst = (currentInst + 1) % artInsta.length
+      document.getElementById("instag")
+      window.open(artInsta[currentInst],"_blank")
     };
-
-    // при клике на почту он вернет имя имя обратно.
-    listItems.addEventListener('click', () => { 
-    listItems.lastChild.textContent = postsData[index - 1].name
-    })
 
     tema = () => {
       let profile = document.getElementById('profile')
@@ -98,7 +65,7 @@ let index = 0;
       })
     }
   };
-  };
+
 
 
 
