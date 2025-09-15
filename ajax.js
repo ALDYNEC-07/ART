@@ -6,20 +6,27 @@ const posts = fetch("https://jsonplaceholder.typicode.com/users")
 
 // Искусство художника
 let artIndex = [
-  "art-1.jpg","art-2.jpg","art-3.jpg", "art-4.jpg", "art-5.jpg",
-  "art-6.jpg", "art-7.jpg"
+  "art-1.jpg","art-6.jpg","art-3.jpg", "art-4.jpg", "art-5.jpg",
+  "art-2.jpg", "art-7.jpg","art-8.jpg","art-9.jpg","art-10.jpg"
 ]
 let current = 0;
 
 // Место работы художника
-let jobUser = ["APPLE", "MILAN", "GRECY", "LONDON", "MOSKOV", "ALDY"]
+let jobUser = ["APPLE", "MILAN", "GRECY", "LONDON", "MOSKOV", "ALDY", "New-York", "SPAIN", "NEW-ORLEANS", "GROZNY"]
 let currentJob = 0;
 
 // Описание картинок художником
-let textUser = ["Я не копировал мир — я выкрикивал его свет и боль на холст.",
+let textUser = [
+  "Я не копировал мир — я выкрикивал его свет и боль на холст.",
+  "Это как буря страстей, кружащаяся в бесконечной игре света и тьмы, где каждый штрих несет свои тайны и разрушения",
   "Я не искал гармонии — я рвал её на части и собирал вновь, чтобы показать правду.",
   "Мои звёзды — это не небо, а огонь души, что не умолкает.",
-  "Я творил так, словно кисть — это последний крик моей жизни."
+  "Я творил так, словно кисть — это последний крик моей жизни.",
+  "Я рисую, чтобы понять сам себя.",
+  "Моё искусство — это мой дневник без слов.",
+  "Я рисую то, что чувствую, а не то, что вижу.",
+  "Я живу в красках, потому что слова недостаточны",
+  "Каждый цвет — это нота в моей личной симфонии."
 ]
 let currentTextUser = 0;
 
@@ -44,7 +51,7 @@ let index = 0;
     idUserDiv.style.backgroundColor = "gainsboro";
     idUserDiv.style.borderRadius = "10px";
     idUserText.textContent = "ID: ";
-    idUser.textContent = postsData[index].id; // добавляем каждый user его id
+    idUser.textContent = postsData[index - 1].id; // добавляем каждый user его id
     idUser.style.color = "black";
 
     // Описание место работы художника
@@ -64,8 +71,8 @@ let index = 0;
     const img = document.getElementById("img");
     current = (current + 1) % artIndex.length; 
     img.src = artIndex[current];
-    img.width = 380
-    img.height = 290
+    img.width = 600
+    img.height = 300
     img.style.borderRadius = "10px"
     art.appendChild(img)
     img.classList.add('animate__animated',"animate__headShake")
@@ -83,18 +90,22 @@ let index = 0;
 
     tema = () => {
       let profile = document.getElementById('profile')
-      profile.style.backgroundColor = "darkcyan";
-      profile.style.color = "aliceblue";
+      profile.style.backgroundColor = "beige";
 
       let temaButton = document.getElementById('temaButton')
       temaButton.addEventListener('dblclick', () => {
       profile.style.backgroundColor = "white";
-      profile.style.color = "black";
       })
     }
-  };
-  };
 
+    const wordSimfonia = document.getElementById('wordSimfonia');
+    let text = "Каждый цвет - это нота в моей личной симфонии.";
+    text = text.replace("цвет", `<span style="color: beige;">цвет</span>`);
+    text = text.replace("нота", `<span style="color: beige;">нота</span>`);
+    text = text.replace("симфонии", `<span style="color: beige;">симфонии</span>`);
+    wordSimfonia.innerHTML = text;  
+  };
+  };
 
 
 
@@ -106,4 +117,6 @@ let index = 0;
 //     delIdUser.lastChild.textContent = postsData[index - 2].id // удаляем каждый удаленный элемент из счетчика
 //     index--
 // };
+
+
 
