@@ -1,3 +1,18 @@
+//Эффект — шапка скрывается, когда скроллишь вниз, и возвращается при прокрутке вверх
+let lastScroll = 0;
+const header = document.querySelector('header');
+
+window.addEventListener('scroll', () => {
+  const currentScroll = window.pageYOffset;
+  if (currentScroll > lastScroll && currentScroll > 100) {
+    header.classList.add('hide');
+  } else {
+    header.classList.remove('hide');
+  }
+  lastScroll = currentScroll;
+});
+
+
 // Instagran User
 const artInsta = [
   "https://www.instagram.com/rebeccapletsch/",
@@ -72,7 +87,7 @@ let currentTextUser = 0;
     aboutUser.textContent = textUser[currentTextUser]
     aboutUser.style.border = "1px solid gray"
     aboutUser.style.borderRadius = "10px"
-
+    aboutUser.classList.add('animate__animated',"animate__fadeIn")
 
 
     // ART-Картина 
@@ -96,7 +111,7 @@ let currentTextUser = 0;
 
     tema = () => {
       let profile = document.getElementById('profile')
-      profile.style.backgroundColor = "beige";
+      profile.style.backgroundColor = "cadetblue";
 
       let temaButton = document.getElementById('temaButton')
       temaButton.addEventListener('dblclick', () => {

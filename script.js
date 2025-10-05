@@ -1,3 +1,83 @@
+//Эффект — шапка скрывается, когда скроллишь вниз, и возвращается при прокрутке вверх
+let lastScroll = 0;
+const header = document.querySelector('header');
+
+window.addEventListener('scroll', () => {
+  const currentScroll = window.pageYOffset;
+  if (currentScroll > lastScroll && currentScroll > 100) {
+    header.classList.add('hide');
+  } else {
+    header.classList.remove('hide');
+  }
+  lastScroll = currentScroll;
+});
+
+
+// Анимация логотипа 
+var textWrapper = document.querySelector('.ml3');
+textWrapper.innerHTML = textWrapper.textContent.replace(/\S/g, "<span class='letter'>$&</span>");
+
+anime.timeline({loop: true})
+  .add({
+    targets: '.ml3 .letter',
+    opacity: [0,1],
+    easing: "easeInOutQuad",
+    duration: 2250,
+    delay: (el, i) => 150 * (i+1)
+  }).add({
+    targets: '.ml3',
+    opacity: 0,
+    duration: 1000,
+    easing: "easeOutExpo",
+    delay: 2000
+  });
+
+// Анимация слов под логотипом
+var textWrapper = document.querySelector('.ml4');
+textWrapper.innerHTML = textWrapper.textContent.replace(/\S/g, "<span class='letter'>$&</span>");
+
+anime.timeline({loop: true})
+  .add({
+    targets: '.ml4 .letter',
+    opacity: [0,1],
+    easing: "easeInOutQuad",
+    duration: 2250,
+    delay: (el, i) => 80 * (i+1)
+  }).add({
+    targets: '.ml4',
+    opacity: 0,
+    duration: 1000,
+    easing: "easeOutExpo",
+    delay: 0
+  });
+
+
+
+  // скролл вниз - анимация
+  (function () {
+    const hero = document.querySelector('.hero');
+    if (!hero) { console.warn('Элемент .hero не найден'); return; }
+
+    const maxScale = 1.2;   // максимальный масштаб
+    const scrollRange = window.innerHeight; // за какой пробег скролла доберёмся до maxScale
+
+    function onScroll() {
+      const s = Math.max(0, Math.min(1, window.scrollY / scrollRange));
+      const scale = 1 + s * (maxScale - 1);
+      hero.style.transform = `scale(${scale})`;
+    }
+
+    window.addEventListener('scroll', onScroll, { passive: true });
+    onScroll();
+  })();
+
+
+  
+  document.querySelector('.scroll-indicator').addEventListener('click', () => {
+  window.scrollTo({ top: window.innerHeight, behavior: 'smooth' });
+});
+
+
 // Получение данных с сервера асинхронно
 const posts = fetch("https://jsonplaceholder.typicode.com/users")
 .then(response => response.json())
@@ -33,8 +113,21 @@ let currentTextUser = 0;
 let postsData = [];
 let index = 0;
 
+
+
+const textt = document.getElementById('opisani')
+textt.innerHTML = "Нажмите на SHOW чтобы посмотреть контент!"
+
+
  const content = () => {
+  textt.innerHTML = "";
   if (index < postsData.length) { // проверяем, есть ли ещё элементы
+    
+
+      setTimeout(function() {
+        textt.innerHTML = "Нажмите на стрелку чтобы посмотреть больше >";
+      }, 5000);
+   
 
         // Создание и получения имен
     const listItems = document.getElementById("list-item");
@@ -90,7 +183,7 @@ let index = 0;
 
     tema = () => {
       let profile = document.getElementById('profile')
-      profile.style.backgroundColor = "beige";
+      profile.style.backgroundColor = "cadetblue";
 
       let temaButton = document.getElementById('temaButton')
       temaButton.addEventListener('dblclick', () => {
@@ -104,19 +197,9 @@ let index = 0;
     text = text.replace("нота", `<span style="color: beige;">нота</span>`);
     text = text.replace("симфонии", `<span style="color: beige;">симфонии</span>`);
     wordSimfonia.innerHTML = text;  
+    wordSimfonia.style.padding = "20px"
+
   };
   };
-
-
-
-  // удаляем последний элемент
-// const delLastElement = () => {
-//     let delList = document.getElementById('list-item');
-//     let delIdUser = document.getElementById('idUser')
-//     delList.removeChild(delList.lastElementChild)
-//     delIdUser.lastChild.textContent = postsData[index - 2].id // удаляем каждый удаленный элемент из счетчика
-//     index--
-// };
-
 
 

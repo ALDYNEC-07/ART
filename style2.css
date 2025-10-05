@@ -28,8 +28,17 @@
 		background-attachment: fixed;
 		padding-bottom: 200px;
 	}
+	header {
+ 		transition: transform 0.3s ease;
+	}
+	header.hide {
+  		transform: translateY(-100%);
+	}
 	#header {
-		width: 1140px;
+		position: sticky;
+		top: 0;
+		z-index: 1000;
+		width: 90%;
 		height: 80px;
 		margin: 0 auto;
 		padding-right: 20px;
@@ -37,7 +46,7 @@
 		justify-content: space-between;
 		align-items: center;
 		font-size: 20px;
-		box-shadow: 0 -5px 10px 0 inset rgba(245, 245, 219, 0.5);
+		box-shadow: 0 -5px 10px 0  rgba(245, 245, 219, 0.5);
 		border-radius: 0 0 20px 20px;
 	}
 	#listMenu {
@@ -97,6 +106,9 @@
 		justify-content: space-between;
 		margin-top: 20px;
 	}
+	#littleImg > img {
+ 		transition: transform 0.3s ease;
+	}
 	#littleImg > img:hover {
 		transform: scale(1.05)
 	}
@@ -113,10 +125,8 @@
 		padding: 5px 20px;
 		text-align: center;
 		border-radius: 5px;
-		border: 0;
-		cursor: pointer;
 		color: white;
-
+		border: 0.1px solid gray;
 		backdrop-filter: blur(10px);
 		background: rgba(0, 0, 0, 0.1);
 		box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);

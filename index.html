@@ -7,10 +7,16 @@
 	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"/>
 	<link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&family=TASA+Explorer:wght@400..800&family=Tagesschrift&display=swap" rel="stylesheet">
 	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"/>
 	<link rel="stylesheet" href="style.css">
 </head>
 <body>
-	<header id="header">
+	<div class="scroll-indicator">
+  		<span class="arrow"></span>
+	</div>
+	<div class="hero"></div>
+	<div class="content">
+			<header id="header">
 		<nav id="navHeader">
 			<ul id="listMenu">
 				<li id="linkMenu"><a href="#">HOME</a></li>
@@ -24,8 +30,8 @@
 		</div>
 	</header>
 	<section id="title">
-		<h1>Reverie</h1>
-	<h6><a>мечтание</a> и потерянность в <a>счастливых</a> мыслях</h6>
+		<h1 class="ml3">Reverie</h1>
+	<h6 class="ml4">мечтание и потерянность в счастливых мыслях</h6>
 	
 	</section>
 	<section id="wordsArt"><p>Живопись — это<br> <a>поэзия</a>, которую <a>видят</a>, а не слышат.</p></section>
@@ -53,9 +59,13 @@
 		<button id="temaButton" onclick="tema()"><i class="fa fa-toggle-on" aria-hidden="true"></i></button>
 		<button id="myButton" onclick="showEmailUser()">EMAIL</button>
 		<button id="myButton" onclick="content()">SHOW</button>
-		<button id="showButton" onclick="showContetnt()"><a href="index2.html" style="color: black;"><i class="fa fa-external-link-square" aria-hidden="true"></i></a></button>
+		<button id="showButton" onclick="showContetnt()"><a href="index2.html" style="color: white;"><i class="fa fa-external-link-square" aria-hidden="true"></i></a></button>
 	</div>
+	<div id="opisani">Нажмите на стрелку чтобы посмотреть больше!</div>
 	<section id="wordSimfonia"></section>
-<script src="ajax.js"></script>
+
+	</div>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/animejs/2.0.2/anime.min.js"></script>
+<script src="script.js"></script>
 </body>
 </html>
