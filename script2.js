@@ -118,6 +118,7 @@ let curComm = 0;
       window.open(artInsta[currentInst],"_blank")
     };
 
+    //Поменять тему блока
     tema = () => {
       let profile = document.getElementById('profile')
       profile.style.backgroundColor = "cadetblue";
@@ -130,18 +131,57 @@ let curComm = 0;
 
 
     // Блок комментарий
-      // profile.style.borderRadius = "15px 15px 25px 25px";
-      // profile.style.paddingBottom = "10px";
-
+///////////
       let titleCommet = document.getElementById('titleCommet');
       titleCommet.innerHTML = "Комментарии";
       titleCommet.style.color = "white";
 
-      // Комменты пользователей
-      let comment = document.getElementById('comment');
-      comment.style.border = "0.1px solid white";
-      curComm = (curComm + 1) % comm.length; 
-      comment.innerHTML = comm[curComm]
+
+      // Создаем форму
+      const form = document.createElement('form');
+      form.id = "form"
+      form.style.marginRight = "60px"
+
+      // Создаем инпут
+      const inputUsers = document.getElementById('inputUsers');
+      inputUsers.style.display = "block"
+      inputUsers.placeholder = 'Введите комментарий';
+      inputUsers.style.margin = "15px"
+      inputUsers.style.padding = "5px"
+      inputUsers.style.borderRadius = "5px"
+      inputUsers.style.border = "1px solid #402d2d"
+      inputUsers.style.backgroundColor = "rgba(255, 255, 255, 0.1)";
+
+
+
+      // Создаем кнопку отправки
+      const button = document.getElementById('button');
+      button.style.display = "block"
+      button.type = 'button';
+      button.textContent = 'Отправить';
+      button.style.margin = "15px"
+      button.style.borderRadius = "5px"
+      button.style.border = "1px solid #402d2d"
+      button.style.color = "#402d2d"
+      button.style.backgroundColor = "white";
+
+      buttonInput = () => {
+          const value = inputUsers.value;
+      let commentFromInput = document.getElementById('comment');
+      commentFromInput.innerHTML = value
+      commentFromInput.classList.add('animate__animated',"animate__fadeIn")
+      }
+
+      // Добавляем элементы в форму
+      form.appendChild(inputUsers);
+      form.appendChild(button);
+
+      // Добавляем форму на страницу
+      let titleSearch = document.getElementById('titleSearch');
+      titleSearch.appendChild(form);
+//////////
+
+
 
       // Оформление общего блока
       let commentDiv = document.getElementById('commentDiv');
@@ -151,6 +191,17 @@ let curComm = 0;
       commentDiv.style.paddingTop = "0"
       commentDiv.style.marginTop = "20px"
 
+      // оформление внутреннего блока юзера
+      let borderComment = document.getElementById('borderComment');
+      borderComment.style.backgroundColor = "cadetblue";
+      borderComment.style.padding = "10px";
+      borderComment.style.borderRadius = "10px";
+
+      // Комменты пользователей
+      let comment = document.getElementById('comment');
+      comment.style.border = "0.1px solid white";
+      curComm = (curComm + 1) % comm.length; 
+      comment.innerHTML = comm[curComm]
 
       // Анимация комментов
       var textWrapper = document.querySelector('.ml12');
@@ -191,12 +242,6 @@ let curComm = 0;
       // дата написания комммента
       let dataComment = document.getElementById('dataComment')
       dataComment.innerHTML = "10:14 11.10.25г";
-
-      // оформление внутреннего блока юзера
-      let borderComment = document.getElementById('borderComment');
-      borderComment.style.backgroundColor = "cadetblue";
-      borderComment.style.padding = "10px";
-      borderComment.style.borderRadius = "10px";
   };
 
 const comment = () => {
