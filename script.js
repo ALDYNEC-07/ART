@@ -84,6 +84,9 @@ const posts = fetch("https://jsonplaceholder.typicode.com/users")
 .then(items => {postsData = items;})
 .catch(err => console.log(err))
 
+let postsData = [];
+let index = 0;
+
 // Искусство художника
 let artIndex = [
   "art-1.jpg","art-6.jpg","art-3.jpg", "art-4.jpg", "art-5.jpg",
@@ -110,8 +113,7 @@ let textUser = [
 ]
 let currentTextUser = 0;
 
-let postsData = [];
-let index = 0;
+
 
 
 

@@ -71,6 +71,15 @@ let currentTextUser = 0;
     curLitArt = (curLitArt + 1) % littleArts.length;
     updateImages();
   })
+// comments
+const comm = [
+  "Восхитительно! Ребекка — настоящий мастер своего дела. Её работы впечатляют, а удобное оформление портфолио позволяет легко погрузиться в мир её творчества. Высокое разрешение изображений даёт возможность по-настоящему оценить детали. Браво!",
+  "Ваши рисунки — настоящие произведения искусства, оживляющие природу и наполняющие душу теплом. В каждом штрихе чувствуется искренняя забота, делая их уникальными и вдохновляющими.",
+  "Этот рисунок — как окно в мир природы. Он передаёт не только красоту пейзажа, но и гармонию, которая царит в природе. Великолепно!",
+  "Удивительно, как Редд Валицки сочетает традиционные техники с современным взглядом! Его работы — настоящее искусство, переносящее в сказочный мир. Вдохновляет мастерство лазерной резки на дереве."
+]
+let curComm = 0;
+
 
  const content = () => {
         // Создание и получения имен
@@ -85,7 +94,7 @@ let currentTextUser = 0;
     const aboutUser = document.getElementById('aboutUser')
     currentTextUser = (currentTextUser + 1) % textUser.length
     aboutUser.textContent = textUser[currentTextUser]
-    aboutUser.style.border = "1px solid gray"
+    aboutUser.style.border = "0.1px solid cadetblue"
     aboutUser.style.borderRadius = "10px"
     aboutUser.classList.add('animate__animated',"animate__fadeIn")
 
@@ -98,7 +107,7 @@ let currentTextUser = 0;
     img.width = 700
     img.height = 400
     img.style.objectFit = "cover";
-    img.style.borderRadius = "10px"
+    img.style.borderRadius = "10px";
     art.appendChild(img)
     img.classList.add('animate__animated',"animate__headShake")
 
@@ -118,19 +127,85 @@ let currentTextUser = 0;
       profile.style.backgroundColor = "white";
       })
     }
+
+
+    // Блок комментарий
+      // profile.style.borderRadius = "15px 15px 25px 25px";
+      // profile.style.paddingBottom = "10px";
+
+      let titleCommet = document.getElementById('titleCommet');
+      titleCommet.innerHTML = "Комментарии";
+      titleCommet.style.color = "white";
+
+      // Комменты пользователей
+      let comment = document.getElementById('comment');
+      comment.style.border = "0.1px solid white";
+      curComm = (curComm + 1) % comm.length; 
+      comment.innerHTML = comm[curComm]
+
+      // Оформление общего блока
+      let commentDiv = document.getElementById('commentDiv');
+      commentDiv.style.backgroundColor = "rgba(255, 255, 255, 0.1)";
+      commentDiv.style.backdropFilter = "blur(10px)"
+      commentDiv.style.padding = "10px"
+      commentDiv.style.paddingTop = "0"
+      commentDiv.style.marginTop = "20px"
+
+
+      // Анимация комментов
+      var textWrapper = document.querySelector('.ml12');
+      textWrapper.innerHTML = textWrapper.textContent.replace(/\S/g, "<span class='letter'>$&</span>");
+
+      anime.timeline({loop: true})
+        .add({
+          targets: '.ml12 .letter',
+          translateX: [40,0],
+          translateZ: 0,
+          opacity: [0,1],
+          easing: "easeOutExpo",
+          duration: 1200,
+          delay: (el, i) => 500 + 30 * i
+        }).add({
+          targets: '.ml12 .letter',
+          translateX: [0,-30],
+          opacity: [1,0],
+          easing: "easeInExpo",
+          duration: 5000,
+          delay: (el, i) => 100 + 30 * i
+        });
+  
+
+        // аватарка юзера
+      let imgUserComment = document.getElementById('imgUserComment');
+      imgUserComment.src = "cat-user.jpg";
+      imgUserComment.width = 50
+      imgUserComment.height = 50
+      imgUserComment.style.objectFit = "cover";
+      imgUserComment.style.borderRadius = "50px"
+
+      // имя юзера
+      let nameUserComment = document.getElementById('nameUserComment');
+      nameUserComment.innerHTML = "Stive Jobs"
+      nameUserComment.style.color = "white"
+
+      // дата написания комммента
+      let dataComment = document.getElementById('dataComment')
+      dataComment.innerHTML = "10:14 11.10.25г";
+
+      // оформление внутреннего блока юзера
+      let borderComment = document.getElementById('borderComment');
+      borderComment.style.backgroundColor = "cadetblue";
+      borderComment.style.padding = "10px";
+      borderComment.style.borderRadius = "10px";
   };
 
-
-
-
-  // удаляем последний элемент
-// const delLastElement = () => {
-//     let delList = document.getElementById('list-item');
-//     let delIdUser = document.getElementById('idUser')
-//     delList.removeChild(delList.lastElementChild)
-//     delIdUser.lastChild.textContent = postsData[index - 2].id // удаляем каждый удаленный элемент из счетчика
-//     index--
-// };
-
-
-
+const comment = () => {
+      let commentDiv = document.getElementById('commentDiv');
+      // включаем блок коммента
+      if(commentDiv.style.display === "none") {
+        commentDiv.style.display = "block";
+      } else {
+      // выключаем блок коммента
+        commentDiv.style.display = "none";
+      }
+}

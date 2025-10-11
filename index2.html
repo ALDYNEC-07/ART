@@ -42,13 +42,26 @@
 				<img id="img" src="">
 			</div>
 		</div>
+			<div id="commentDiv">
+				<h3 id="titleCommet"></h3>
+				<div id="borderComment">
+						<p id="comment" class="ml12"></p>
+					<span id="commentUser">
+						<img id="imgUserComment" src="" alt="">
+						<i id="nameUserComment"></i>
+						<i id="dataComment"></i>
+					</span>
+				</div>
+			</div>
 	</div>
 	<div class="button">
 		<button id="temaButton" onclick="tema()"><i class="fa fa-toggle-on" aria-hidden="true"></i></button>
 		<button id="instag" onclick="showInsta()"><i class="fa fa-instagram" aria-hidden="true"></i></button>
 		<button id="myButton" onclick="content()">SHOW</button>
+		<button id="myButton" class="commentButton" onclick="comment()">COMMENT</button>
 		<button id="showButton" onclick="showContetnt()"><a href="index.html" style="color: white;"><i class="fa fa-reply" aria-hidden="true"></i></a></button>
 	</div>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/animejs/2.0.2/anime.min.js"></script>
 <script src="script2.js"></script>
 </body>
 </html>

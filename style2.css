@@ -64,8 +64,7 @@
 	}
 	#myProfile {
 		display: flex;
-		justify-content: center;
-		gap: 30px;
+		flex-direction: column;
 		align-items: center;
 		margin-top: -30px;
 		color: black;
@@ -73,7 +72,6 @@
 	#profile {
 		width: 1200px;
 		display: flex;
-		margin: 30px 0;
 		margin-top: 100px;
 		padding: 10px;
 		padding-bottom: 0;
@@ -120,6 +118,7 @@
 		justify-content: center;
 		gap: 70px;
 		margin:  auto;
+		margin-top: 30px;
 		}
 	#myButton, #temaButton, #showButton, #instag {
 		padding: 5px 20px;
@@ -134,4 +133,39 @@
 	}
 	.button > button:hover {
   		transform: scale(1.05);
+	}
+	#commentDiv {
+		width: 1150px;
+		border-radius: 15px;
+ 		font-family: "BubbleSans";
+		font-size: 16px;
+		color: #402d2d;
+	}
+	#comment {
+		width: 85%;
+		margin-left: 100px;
+		margin-bottom: -20px;
+		padding: 10px;
+		border-radius: 10px;
+	}
+.ml12 {
+  font-weight: 200;
+  text-transform: uppercase;
+  letter-spacing: 0.5em;
+}
+
+.ml12 .letter {
+  display: inline-block;
+  line-height: 1em;
+}
+	#commentUser > p {
+		font-family: "TASA Explorer", sans-serif;
+	}
+	#commentUser {
+		margin-top: 50px;
+	}
+	#dataComment {
+		font-family: "TASA Explorer", sans-serif;
+		margin-left: 10px;
+		font-size: 14px;
 	}
